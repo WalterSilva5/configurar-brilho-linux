@@ -21,6 +21,7 @@ class ControllerTelaSistema(QMainWindow):
 
 
     def exibirValor(self):
-        atual = str((self.tela.brilho.value()+50)/100)
+        atual = str((self.tela.brilho.value()-50)/100)
         self.tela.valor.setText(atual)
         os.system("xrandr --output VGA-1 --brightness {}".format(atual))
+        os.system("xrandr --output HDMI-A-0 --brightness {}".format(atual))

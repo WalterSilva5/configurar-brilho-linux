@@ -1,0 +1,136 @@
+[
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_janelaPrincipal",
+        "importPath": "view.telaSistema",
+        "description": "view.telaSistema",
+        "isExtraImport": true,
+        "detail": "view.telaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "random,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random.",
+        "description": "random.",
+        "detail": "random.",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QtCore",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtGui",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtWidgets",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "ModelTelaSistema",
+        "importPath": "model.modelTelaSistema",
+        "description": "model.modelTelaSistema",
+        "isExtraImport": true,
+        "detail": "model.modelTelaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "ControllerTelaSistema",
+        "importPath": "controller.controllerTelaSistema",
+        "description": "controller.controllerTelaSistema",
+        "isExtraImport": true,
+        "detail": "controller.controllerTelaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "ControllerTelaSistema",
+        "kind": 6,
+        "importPath": "controller.controllerTelaSistema",
+        "description": "controller.controllerTelaSistema",
+        "peekOfCode": "class ControllerTelaSistema(QMainWindow):\n    def __init__(self, model):\n        super().__init__()\n        self.model = model\n        self.tela = Ui_MainWindow()\n        self.tela.setupUi(self)\n        self.tela.brilho.valueChanged.connect(self.exibirValor)\n    def exibirValor(self):\n        atual = str((self.tela.brilho.value()-50)/100)\n        self.tela.valor.setText(atual)",
+        "detail": "controller.controllerTelaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "ModelTelaSistema",
+        "kind": 6,
+        "importPath": "model.modelTelaSistema",
+        "description": "model.modelTelaSistema",
+        "peekOfCode": "class ModelTelaSistema(QObject):\n    @property\n    def mensagemErro(self):\n        return mensagemErro\n    @mensagemErro.setter\n    def mensagemErro(self, mensagem):\n        self.mensagemErro = mensagem",
+        "detail": "model.modelTelaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_janelaPrincipal",
+        "kind": 6,
+        "importPath": "view.telaSistema",
+        "description": "view.telaSistema",
+        "peekOfCode": "class Ui_janelaPrincipal(object):\n    def setupUi(self, janelaPrincipal):\n        janelaPrincipal.setObjectName(\"janelaPrincipal\")\n        janelaPrincipal.resize(300, 100)\n        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)\n        sizePolicy.setHorizontalStretch(0)\n        sizePolicy.setVerticalStretch(0)\n        sizePolicy.setHeightForWidth(janelaPrincipal.sizePolicy().hasHeightForWidth())\n        janelaPrincipal.setSizePolicy(sizePolicy)\n        janelaPrincipal.setMinimumSize(QtCore.QSize(300, 100))",
+        "detail": "view.telaSistema",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class App(QApplication):\n    def __init__(self, sys_argv):\n        super(App, self).__init__(sys_argv)\n        self.model = ModelTelaSistema()\n        self.view = ControllerTelaSistema(self.model)\n        self.view.show()\nif __name__ == \"__main__\":\n    app = App(sys.argv)\n    sys.exit(app.exec())",
+        "detail": "main",
+        "documentation": {}
+    }
+]
